@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ShelfCategory from "./ShelfCategory";
 
 class Search extends React.Component {
   render() {
     const { searchQuery } = this.props;
+    console.log("Try ", this.props.searchBooks);
+
     return (
       <div className="search-books">
         <div className="search-books-bar">
@@ -27,7 +30,20 @@ class Search extends React.Component {
           </div>
         </div>
         <div className="search-books-results">
-          <ol className="books-grid" />
+          <ol className="books-grid">
+            {this.props.searchBooks > 0 ? (
+              this.props.searchBooks.map((book) => (
+                <li key={book.id}>
+                  <ShelfCategory
+                    book={book}
+                    changeCategory={this.props.changeCategory}
+                  />
+                </li>
+              ))
+            ) : (
+              <li />
+            )}
+          </ol>
         </div>
       </div>
     );

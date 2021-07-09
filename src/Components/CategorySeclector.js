@@ -2,13 +2,11 @@ import React from "react";
 
 class CategorySelector extends React.Component {
   render() {
-    const { book } = this.props;
+    const { changeCategory, book } = this.props;
     return (
       <select
         value={this.props.book.shelf}
-        onChange={(event) =>
-          this.props.changeCategory(book, event.target.value)
-        }
+        onChange={(event) => changeCategory(book, event.target.value)}
       >
         <option value="move" disabled>
           Move to...
