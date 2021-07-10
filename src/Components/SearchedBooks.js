@@ -14,7 +14,7 @@ class SearchedBooks extends React.Component {
               width: 128,
               height: 193,
               backgroundImage: `url(${
-                this.props.imageLinks ? book.imageLinks.thumbnail : "No Cover"
+                book.imageLinks ? book.imageLinks.thumbnail : ""
               })`,
             }}
           />
