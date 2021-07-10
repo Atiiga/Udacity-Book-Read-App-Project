@@ -20,6 +20,7 @@ class BooksApp extends React.Component {
       isLoading: true,
     };
     this.changeCategory = this.changeCategory.bind(this);
+    this.searchQuery = this.searchQuery.bind(this);
   }
 
   componentDidMount() {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ShelfCategory from "./ShelfCategory";
+import SearchedBooks from "./SearchedBooks";
 
 class Search extends React.Component {
   render() {
@@ -29,12 +29,13 @@ class Search extends React.Component {
             />
           </div>
         </div>
+        <div className="list-books-content" />
         <div className="search-books-results">
           <ol className="books-grid">
-            {this.props.searchBooks > 0 ? (
+            {this.props.searchBooks.length > 0 ? (
               this.props.searchBooks.map((book) => (
                 <li key={book.id}>
-                  <ShelfCategory
+                  <SearchedBooks
                     book={book}
                     changeCategory={this.props.changeCategory}
                   />
